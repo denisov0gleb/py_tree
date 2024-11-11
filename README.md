@@ -1,5 +1,6 @@
 # README.md
 
+```
 
   _____          _                 
  |  __ \        | |                
@@ -10,6 +11,7 @@
          __/ |_____                
         |___/______|               
 
+```
 
 ## About
 Student's project of the command-line *tree* program.

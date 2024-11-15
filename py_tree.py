@@ -1,21 +1,32 @@
 import os
 
 
-def main() -> None:
+def defining_folders():
     initial_path = os.path.abspath('.')
-    dirs_list= initial_path.split('\\')
+    dirs_list = initial_path.split('\\')
+    return_list = os.listdir(initial_path)
 
-    path_string = ''
-    for index, dir_name in enumerate(dirs_list):
-        if index == 0:
-            path_string += dir_name
-        else:
-            path_string += '\\' + dir_name
+    return return_list
+    # print(dirs_list) #Test_prints
+    # print(initial_path)
+    # print(return_list)
 
-            print(*os.listdir(path_string), end='\n\n')
-    print(dirs_list)
 
+def check_directory():
+    test_dict = {}
+    content = defining_folders()
+    # print(content)
+
+    for i in content:
+        if os.path.isfile(i):
+            test_dict[i] = 'It is file'
+
+        if os.path.isdir(i):
+            test_dict[i] = 'It is directory'
+
+    return test_dict
 
 
 if __name__ == "__main__":
-    main()
+    final_result = check_directory()
+    print(final_result)

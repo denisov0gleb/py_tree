@@ -9,7 +9,6 @@ class TestClass:
     def check_directory(self):
         test_dict = {}
         return_list = os.listdir(self.initial_path)
-        # print(content)
 
         for i in return_list:
             if os.path.isfile(i):

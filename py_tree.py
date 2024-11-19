@@ -1,7 +1,7 @@
 import os
 
 
-class TestClass:
+class DirectoryContent:
 
     def __init__(self, initial_path):
         self.initial_path = initial_path
@@ -14,16 +14,16 @@ class TestClass:
             if os.path.isfile(i):
                 test_dict[i] = 'It is file'
 
-            if os.path.isdir(i):
+            elif os.path.isdir(i):
                 test_dict[i] = 'It is directory'
 
         return test_dict
 
     def main(self):
-        if __name__ == "__main__":
-            final_result = self.check_directory()
-            print(final_result)
+        final_result = self.check_directory()
+        print(final_result)
 
 
-test = TestClass(initial_path=os.path.abspath('.'))
-test.main()
+if __name__ == "__main__":
+    directory = DirectoryContent(initial_path=os.path.abspath('.'))
+    directory.main()
